@@ -14,7 +14,7 @@ pipeline {
         stage('Download CLI') {
             steps {
                 sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift'
-                 sh 'chmod +x ./tidelift'
+                 sh 'chmod o+x ./tidelift'
             }
         }
           stage('Running Tidelift Alignment') {
