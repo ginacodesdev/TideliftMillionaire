@@ -11,19 +11,19 @@ pipeline {
       TIDELIFT_CATALOG = 'Gina-Tidelift-Catalog-Walkthrough'
     }
     stages {
-        stage('Download CLI') {
-            steps {
-                sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift'
-                  sh 'chmod +x ./tidelift'
-            }
-            
-          //stage('Running Tidelift Alignment') {
+        //stage('Download CLI') {
             //steps {
-               // catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                     // sh "./tidelift alignment save --wait --project ${TIDELIFT_PROJECT_NAME} --organization ${TIDELIFT_ORGANIZATION} --catalog ${TIDELIFT_CATALOG}"
-              // }
+                //sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift'
+                 // sh 'chmod +x ./tidelift'
            // }
-        //  }
+            
+          stage('Running Tidelift Alignment') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                      sh "./tidelift alignment save --wait --project ${TIDELIFT_PROJECT_NAME} --organization ${TIDELIFT_ORGANIZATION} --catalog ${TIDELIFT_CATALOG}"
+               }
+            }
+         }
 }
     }
 }
