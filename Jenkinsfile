@@ -22,7 +22,6 @@ pipeline {
                       sh "./tidelift alignment save --wait --project ${TIDELIFT_PROJECT_NAME} --organization ${TIDELIFT_ORGANIZATION} --catalog ${TIDELIFT_CATALOG}"
                 }
             }
-            }
         }
     }
 }
