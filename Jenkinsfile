@@ -9,7 +9,7 @@ pipeline {
       TIDELIFT_PROJECT_NAME = 'TideliftMillionaire'
       TIDELIFT_ORGANIZATION = 'team/Tidelift-252d'
       TIDELIFT_CATALOG = 'Gina-Tidelift-Catalog-Walkthrough'
-    }
+  /*  }
     stages {
         stage('Checkout code') {
             steps {
@@ -32,4 +32,12 @@ pipeline {
               }
             }
         }
+    } */ 
+    }stages {
+        stage('hello') {
+            steps {
+                sh 'echo "Hello World"'
+            }
+        }
     }
+}
