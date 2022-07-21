@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Download CLI') {
             steps {
-                sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift'
+                sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift_darwin'
                  sh 'chmod o+x ./tidelift'
             }
         }
