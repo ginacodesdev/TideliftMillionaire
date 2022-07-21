@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout code') {
             steps {
-                git credentialsId: 'Tidelift-252d', url: 'https://github.com/ginacodesdev/TideliftMillionaire.git'
+                git credentialsId: 'jenkins-example-github-pat', url: 'https://github.com/ginacodesdev/TideliftMillionaire.git'
             }
         }
 
