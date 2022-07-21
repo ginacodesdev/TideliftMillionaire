@@ -11,9 +11,10 @@ pipeline {
       TIDELIFT_CATALOG = 'Gina-Tidelift-Catalog-Walkthrough'
     }
     stages {
-        stage ('Checkout code') {
+        stage ('Download CLI') {
             steps {
-                git 'https://github.com/ginacodesdev/TideliftMillionaire.git'
+                sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift'
+                  sh 'chmod +x ./tidelift'
             }
         }
     }
