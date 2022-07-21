@@ -11,11 +11,11 @@ pipeline {
       TIDELIFT_CATALOG = 'Gina-Tidelift-Catalog-Walkthrough'
     }
     stages {
-        //stage('Download CLI') {
-            //steps {
-                //sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift'
-                 // sh 'chmod +x ./tidelift'
-           // }
+        stage('Download CLI') {
+            steps {
+                sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift'
+                 sh 'chmod +x ./tidelift'
+            }
             
           stage('Running Tidelift Alignment') {
             steps {
