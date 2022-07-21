@@ -16,12 +16,12 @@ pipeline {
                 sh 'curl -s -o ./tidelift https://download.tidelift.com/cli/tidelift'
                   sh 'chmod +x ./tidelift'
             }
+            
           stage('Running Tidelift Alignment') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                       sh "./tidelift alignment save --wait --project ${TIDELIFT_PROJECT_NAME} --organization ${TIDELIFT_ORGANIZATION} --catalog ${TIDELIFT_CATALOG}"
-                }
+               }
             }
-        }
-    }
+          }
 }
