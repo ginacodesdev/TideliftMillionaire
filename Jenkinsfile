@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    tools {
-        nodejs 'node'
-    }environment {
+   environment {
 // Always store API keys in Jenkins credential store
 // ORG key should be either an Organization API key or Project API key
         TIDELIFT_API_KEY = credentials('my-tidelift-project-api-key')
