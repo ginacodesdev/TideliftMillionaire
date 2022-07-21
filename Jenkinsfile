@@ -11,9 +11,9 @@ pipeline {
       TIDELIFT_CATALOG = 'Gina-Tidelift-Catalog-Walkthrough'
     }
     stages {
-        stage ('hello') {
+        stage ('Checkout code') {
             steps {
-                sh 'echo "Hello World"'
+                git 'https://github.com/ginacodesdev/TideliftMillionaire.git'
             }
         }
     }
